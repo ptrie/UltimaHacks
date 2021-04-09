@@ -18,7 +18,7 @@ startPatch EXE_LENGTH, eop-frameLimiter
 			mov dx, [dseg_time+2]
 			sub ax, [dseg_prevFrameTime]
 			sbb dx, [dseg_prevFrameTime+2]
-			cmp ax, 6
+			cmp ax, [dseg_frameLimiterAdjust]
 			jc check
 		done:
 			mov ax, [dseg_time]

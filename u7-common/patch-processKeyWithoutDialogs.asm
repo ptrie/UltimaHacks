@@ -201,6 +201,6 @@ startPatch EXE_LENGTH, processKeyWithoutDialogs
 			
 			responsiveAvatarActionMappingEnd:
 			
-		times 72 nop
+		times 68 nop
 	endBlockAt off_actionMappingTable_end
 endPatch

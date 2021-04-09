@@ -51,7 +51,10 @@
 %assign dseg_flagNumberPromptString             0x1083
 %assign dseg_frameLimiterEnabled                0x1090
 %assign dseg_prevFrameTime                      0x1091
-;       dseg_                                   0x1093
+%assign dseg_frameLimiterAdjust                 0x1095
+%assign dseg_frameLimiterAdjustString           0x1097
+%assign dseg_frameLimiterAdjustStringFormat     0x10A9
+;       dseg_                                   0x10AE
 ;       dseg_stolenBytes_end                    0x1101
 
 %assign dseg_divideByZeroString                 0x05F6
@@ -105,6 +108,7 @@
 %assign dseg_dialogState                        0x65D4
 %assign dseg_apn_barkTexts                      0x65D5
 %assign dseg_pn_workstring                      0x6E5C
+%assign dseg_debugMenuTextColor                 0x730C
 %assign dseg_cheatsEnabled                      0x7776
 %assign dseg_mouseXx                            0x7810
 %assign dseg_mouseY                             0x7812

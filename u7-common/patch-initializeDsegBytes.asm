@@ -53,11 +53,5 @@ startPatch EXE_LENGTH, initializeDsegBytes
 		db 'Flag number?', 0
 	endBlockOfLength 13
 
-	startBlockAt seg_dseg, dseg_frameLimiterEnabled
-		db 1
-	endBlock
-
-	startBlockAt seg_dseg, dseg_prevFrameTime
-		dw 0
-	endBlock
+    gameSpecificInitializations
 endPatch

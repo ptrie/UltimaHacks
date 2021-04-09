@@ -89,7 +89,32 @@ defineAddress 31, 0x0F77, actionMappingTable_end
 			prompt_end:
 			prompt_length equ (prompt_end - prompt)
 
-		times 56 nop
+	%assign off_cheat_alt8 block_currentOffset
+		push si
+
+		mov byte [dseg_debugMenuTextColor], 0xF ; white
+
+		push word [dseg_frameLimiterAdjust]
+		push dseg_frameLimiterAdjustStringFormat
+		push dseg_frameLimiterAdjustString+15
+		callFromOverlay sprintf
+		mov byte [dseg_frameLimiterAdjustString+17], 0
+		add sp, 6
+
+		push dseg_frameLimiterAdjustString
+		callFromLoadModule promptForIntegerWord
+		pop cx
+
+		cmp bx, 0
+		je alt8_parse_error
+		mov [dseg_frameLimiterAdjust], ax
+
+		alt8_parse_error:
+		pop si
+
+		jmp calcJump(off_afterKeyHandlers)
+
+		times 6 nop
 %endmacro
 
 %include "../u7-common/patch-processKeyWithoutDialogs.asm"

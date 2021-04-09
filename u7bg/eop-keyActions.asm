@@ -6,7 +6,7 @@
 %endmacro
 
 %macro defineGameSpecificKeyEops 0
-	defineKeyEop 1, 0x17F, off_eop_toggleFrameLimiter
+	; none
 %endmacro
 
 %include "../u7-common/patch-eop-keyActions.asm"

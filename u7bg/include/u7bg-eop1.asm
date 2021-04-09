@@ -46,6 +46,5 @@ eopProc eop1, 0x050, target
 eopProc eop1, 0x0A0, toggleAudio
 eopProc eop1, 0x080, toggleCheats
 eopProc eop1, 0x030, toggleCombat
-eopProc eop1, 0x090, toggleFrameLimiter
 eopProc eop1, 0x040, toggleMouseHand
 eopProc eop1, 0x060, usePartyItem
