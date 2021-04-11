@@ -70,7 +70,7 @@ startPatch EXE_LENGTH, eop-displayVersion
 		hacksString:
 			db 'with UltimaHacks~'
 			db '(assembled ', __DATE__, ')~'
-			db 'https:// github.com / JohnGlassmyer / UltimaHacks'
+			db 'https:// github.com / ptrie / UltimaHacks'
 			db 0
 			
 		appendToFarString:
