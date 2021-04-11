@@ -1,10 +1,6 @@
 %include "include/u7bg-all-includes.asm"
 
 %macro gameSpecificInitializations 0
-	startBlockAt seg_dseg, dseg_frameLimiterEnabled
-		db 1
-	endBlock
-
 	startBlockAt seg_dseg, dseg_prevFrameTime
 		dd 0
 	endBlock

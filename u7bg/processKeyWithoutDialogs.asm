@@ -98,7 +98,6 @@ defineAddress 31, 0x0F77, actionMappingTable_end
 		push dseg_frameLimiterAdjustStringFormat
 		push dseg_frameLimiterAdjustString+15
 		callFromOverlay sprintf
-		mov byte [dseg_frameLimiterAdjustString+17], 0
 		add sp, 6
 
 		push dseg_frameLimiterAdjustString
@@ -107,6 +106,10 @@ defineAddress 31, 0x0F77, actionMappingTable_end
 
 		cmp bx, 0
 		je alt8_parse_error
+		cmp ax, 100
+		jb alt8_reasonable_input
+		mov ax, 99
+		alt8_reasonable_input:
 		mov [dseg_frameLimiterAdjust], ax
 
 		alt8_parse_error:
@@ -114,7 +117,7 @@ defineAddress 31, 0x0F77, actionMappingTable_end
 
 		jmp calcJump(off_afterKeyHandlers)
 
-		times 6 nop
+		times 3 nop
 %endmacro
 
 %include "../u7-common/patch-processKeyWithoutDialogs.asm"

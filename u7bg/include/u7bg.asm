@@ -49,12 +49,11 @@
 %assign dseg_divideByZeroTemplate               0x1070
 %assign dseg_areBarksSuppressed                 0x1082
 %assign dseg_flagNumberPromptString             0x1083
-%assign dseg_frameLimiterEnabled                0x1090
-%assign dseg_prevFrameTime                      0x1091
-%assign dseg_frameLimiterAdjust                 0x1095
-%assign dseg_frameLimiterAdjustString           0x1097
-%assign dseg_frameLimiterAdjustStringFormat     0x10A9
-;       dseg_                                   0x10AE
+%assign dseg_prevFrameTime                      0x1090
+%assign dseg_frameLimiterAdjust                 0x1094
+%assign dseg_frameLimiterAdjustString           0x1096
+%assign dseg_frameLimiterAdjustStringFormat     0x10A8
+;       dseg_                                   0x10AD
 ;       dseg_stolenBytes_end                    0x1101
 
 %assign dseg_divideByZeroString                 0x05F6
@@ -262,7 +261,7 @@ defineAddress 326, 0x004D, FarString_new
 
 defineAddress seg_eop1, 0x00B1, eop1_entry_varArgsDispatcher
 defineAddress seg_eop1, 0x00B6, eop1_entry_2
-defineAddress seg_eop1, 0x00BB, eop1_entry_frameLimiter
+defineAddress seg_eop1, 0x00BB, eop1_entry_3
 
 defineAddress 337, 0x0025, beginConversation
 defineAddress 337, 0x0043, endConversation
