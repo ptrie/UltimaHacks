@@ -33,5 +33,5 @@ startPatch EXE_LENGTH, eop-frameLimiter
 	startBlockAt addr_drawWorldCall
 		; jmp instead of call to preserve the position of drawWorld's stack args
 		jmpFromLoadModule unusedMT32WaitLoop
-	endBlockOfLength off_drawWorldCall_end
+	endBlockAt off_drawWorldCall_end
 endPatch
